@@ -1,0 +1,1570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SudokuSolver</class>
+ <widget class="QMainWindow" name="SudokuSolver">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SudokuSolver</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(251, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="G00">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;
+border-left-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G01">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G02">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;
+border-right-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G11">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G12">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G21">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G20">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G22">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G13">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G23">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G14">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G04">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G03">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G05">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G15">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G24">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G25">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G16">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G26">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G17">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G07">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G06">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;
+border-left-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G08">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-top-width: 2px;
+border-right-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G18">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>90</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G27">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G28">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G40">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G58">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G50">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G41">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G35">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G56">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G31">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G38">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G44">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G47">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G46">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G43">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G45">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G30">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G36">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G32">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G42">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G54">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G37">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G48">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>210</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G33">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G53">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G51">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G57">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G52">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G55">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>250</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G34">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G70">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G88">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G80">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G71">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G65">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G86">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G61">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G68">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G74">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G77">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G76">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G_73">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G75">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G60">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G66">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-left-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G62">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G72">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G84">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G67">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G78">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>330</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G63">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G83">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G81">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G87">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G82">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-right-width: 2px;
+border-bottom-width: 2px;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G85">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>370</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid gray; 
+border-bottom-width: 2px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="G64">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>330</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Solve</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>60</y>
+      <width>271</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="Button1">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="Button2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="Button3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="Button4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>4</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="Button5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="Button6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>6</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="Button7">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>7</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="Button8">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>2000</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>8</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="Button9">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>9</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
